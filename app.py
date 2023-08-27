@@ -32,7 +32,8 @@ while respuesta != "salir":
             print("")
             print("Libro registrado exitosamente")
         elif int(opt) == 4:
-            #completar
+            os.system ("cls")
+            bibloteca.eliminar_ejemplar_libro()
             print()
         elif int(opt) == 5:
             os.system ("cls")
@@ -48,5 +49,6 @@ while respuesta != "salir":
         print("Ingrese una opción numérica")
     
     input("Presione cualquier tecla para continuar....") # Pausa
+    os.system ("cls")
 
 print("Hasta luego!.")
