@@ -2,6 +2,7 @@
 
 
 import os
+import bibloteca
 
 print("Bienvenido!")
 respuesta = ''
@@ -26,13 +27,19 @@ while respuesta != "salir":
             #completar
             print()
         elif int(opt) == 3:
-            #completar
-            print()
+            os.system ("cls")
+            bibloteca.registrar_nuevo_libro()
+            print("")
+            print("Libro registrado exitosamente")
         elif int(opt) == 4:
             #completar
             print()
         elif int(opt) == 5:
-            #completar
+            os.system ("cls")
+            print("Lista de los libros prestados:")
+            print("-----------------------------")
+            print("")
+            bibloteca.ejemplares_prestados()
             print()
         elif int(opt) == 6:
             respuesta = "salir"
