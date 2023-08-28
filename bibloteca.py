@@ -42,19 +42,37 @@ def eliminar_ejemplar_libro():
     else:
         print(f"El libro con el código: {delete_cod} no existe.")
 
-def prestar_ejemplar_libro(libro):
-    cod       =libro["cod"]
-    cant_ej_ad=libro["cant_ej_ad"]
-    cant_ej_pr=libro["cant_ej_pr"]
-    titulo    =libro["titulo"]
-    autor     =libro["autor"]
+def prestar_ejemplar_libro():
 
-    print("")
-    print("Detalle del libro:")
-    print("-----------------")
-    print(f"Codigo: {cod}\nCantidad de ejemplares adquiridos: {cant_ej_ad}")
-    print(f"Cantidad de ejemplares prestados: {cant_ej_pr}\nTitulo: {titulo}\nAutor: {autor}")
+    cod_input=input("Ingrese el codigo del libro:")
+    bandera=0
+    for libro in libros:
+    
+        cod       =libro["cod"]
+        cant_ej_ad=libro["cant_ej_ad"]
+        cant_ej_pr=libro["cant_ej_pr"]
+        titulo    =libro["titulo"]
+        autor     =libro["autor"]
+        if cod_input==cod:
+            bandera=1
+            print("")
+            print("Detalle del libro:")
+            print("-----------------")
+            print(f"Codigo: {cod}\nCantidad de ejemplares adquiridos: {cant_ej_ad}")
+            print(f"Cantidad de ejemplares prestados: {cant_ej_pr}\nTitulo: {titulo}\nAutor: {autor}")
+            if cant_ej_ad>0:
+                confirm=input("¿Desea adquirir un ejemplar?\nIngrese:\n1-Si\n2-No\n")
+                if int(confirm)==1:
+                    print("Confirmacion exitosa")
+                    libro["cant_ej_ad"]-=1
+                    libro["cant_ej_pr"]+=1
+            else:
+                print("Stock insuficiente. No es posible realizar el prestamo.")
+    if bandera==0:
+        print("Codigo de libro ingresado no encontrado.")
 
+
+    
 def devolver_ejemplar_libro():
     #completar
     return None

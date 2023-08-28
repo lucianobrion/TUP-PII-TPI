@@ -21,6 +21,7 @@ while respuesta != "salir":
     os.system ("cls") #Limpiar pantalla
     if opt.isnumeric():
         if int(opt) == 1:
+            bibloteca.prestar_ejemplar_libro()
             #completar
             print()
         elif int(opt) == 2:
