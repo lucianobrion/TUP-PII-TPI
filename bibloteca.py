@@ -24,7 +24,15 @@ def ejemplares_prestados():
 def registrar_nuevo_libro():
     nuevo_libro = l.nuevo_libro()
     libros.append(nuevo_libro)
-    prestar_ejemplar_libro(nuevo_libro)
+    cod       =nuevo_libro["cod"]
+    cant_ej_ad=nuevo_libro["cant_ej_ad"]
+    titulo    =nuevo_libro["titulo"]
+    autor     =nuevo_libro["autor"]
+    print("----------------------")
+    print('Datos del registro:')
+    print(f"Nombre:{titulo}\nAutor:{autor}\nCodigo:{cod}\nEjemplares adquiridos:{cant_ej_ad}")
+    print("----------------------")
+
 
 def eliminar_ejemplar_libro():
     delete_cod=input("Ingrese el código del libro que desea eliminar: ")
@@ -44,7 +52,7 @@ def eliminar_ejemplar_libro():
 
 def prestar_ejemplar_libro():
 
-    cod_input=input("Ingrese el codigo del libro:")
+    cod_input=input("Ingrese el codigo del libro: ")
     bandera=0
     for libro in libros:
     
@@ -59,7 +67,7 @@ def prestar_ejemplar_libro():
             print("Detalle del libro:")
             print("-----------------")
             print(f"Codigo: {cod}\nCantidad de ejemplares adquiridos: {cant_ej_ad}")
-            print(f"Cantidad de ejemplares prestados: {cant_ej_pr}\nTitulo: {titulo}\nAutor: {autor}")
+            print(f"Titulo: {titulo}\nAutor: {autor}")
             if cant_ej_ad>0:
                 confirm=input("¿Desea adquirir un ejemplar?\nIngrese:\n1-Si\n2-No\n")
                 if int(confirm)==1:

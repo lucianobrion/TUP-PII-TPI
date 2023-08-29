@@ -8,7 +8,7 @@ libro3 = {'cod': 'adOd09UE', 'cant_ej_ad': 1, 'cant_ej_pr': 0, "titulo": "El có
 
 def nuevo_libro():
     cod       =generar_codigo()
-    cant_ej_ad=input("Ingrese la cantidad de ejemplares adqiridos: ")
+    cant_ej_ad=input("Ingrese la cantidad de ejemplares adquiridos: ")
     titulo    =input("Ingrese el titulo del libro: ")
     autor     =input("Ingrese el autor del libro: ")
 
