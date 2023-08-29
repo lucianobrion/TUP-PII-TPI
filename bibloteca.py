@@ -74,8 +74,27 @@ def prestar_ejemplar_libro():
 
     
 def devolver_ejemplar_libro():
-    #completar
-    return None
+    cod_input=input("Ingrese el codigo del libro:")
+    badera=0
+    for libro in libros:
+        cod       =libro["cod"]
+        cant_ej_ad=libro["cant_ej_ad"]
+        cant_ej_pr=libro["cant_ej_pr"]
+        titulo    =libro["titulo"]
+        if cod_input==cod and cant_ej_pr>0:
+            bandera=1
+            confirma_devolucion=input(f"¿Desea confirmar la devolucion del libro {titulo}?\n 1-Si  2-No\n")
+            if int(confirma_devolucion)==1:
+                libro["cant_ej_ad"]+=1
+                libro["cant_ej_pr"]-=1
+                print("Devolucion de libro exitosa")
+            else:
+                print("Devolucin de libro cancelada")
+        elif cod_input==cod and cant_ej_pr<=0:
+            bandera=1
+            print(f"Error. No hay libros de {titulo} prestados para devolver")
+    if bandera==0:
+        print("Error. El codigo ingresado no pertece a nigun libro registrado.")
 
 def nuevo_libro():
     #completar
