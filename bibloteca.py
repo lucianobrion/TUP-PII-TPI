@@ -52,7 +52,7 @@ def eliminar_ejemplar_libro():
 
 def prestar_ejemplar_libro():
 
-    cod_input=input("Ingrese el codigo del libro: ")
+    cod_input=input("Ingrese el código del libro: ")
     bandera=0
     for libro in libros:
     
@@ -77,13 +77,13 @@ def prestar_ejemplar_libro():
             else:
                 print("Stock insuficiente. No es posible realizar el prestamo.")
     if bandera==0:
-        print("Codigo de libro ingresado no encontrado.")
+        print("Código de libro ingresado no encontrado.")
 
 
     
 def devolver_ejemplar_libro():
     cod_input=input("Ingrese el codigo del libro:")
-    badera=0
+    bandera=0
     for libro in libros:
         cod       =libro["cod"]
         cant_ej_ad=libro["cant_ej_ad"]
@@ -95,14 +95,14 @@ def devolver_ejemplar_libro():
             if int(confirma_devolucion)==1:
                 libro["cant_ej_ad"]+=1
                 libro["cant_ej_pr"]-=1
-                print("Devolucion de libro exitosa")
+                print("Devolución de libro exitosa")
             else:
-                print("Devolucin de libro cancelada")
+                print("Devolución de libro cancelada")
         elif cod_input==cod and cant_ej_pr<=0:
             bandera=1
             print(f"Error. No hay libros de {titulo} prestados para devolver")
     if bandera==0:
-        print("Error. El codigo ingresado no pertece a nigun libro registrado.")
+        print("Error. El código ingresado no pertenece a ningún libro registrado.")
 
 def nuevo_libro():
     #completar
